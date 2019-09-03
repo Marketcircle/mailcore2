@@ -17,6 +17,10 @@
 #include "MCHashMap.h"
 #include "MCUtils.h"
 
+#ifndef _MSC_VER
+#include <sys/param.h>
+#endif
+
 using namespace mailcore;
 
 void IndexSet::init()
@@ -215,11 +219,15 @@ void IndexSet::addRange(Range range)
     mRanges[rangeIndex] = range;
     
     mergeRanges(rangeIndex);
-    if (rangeIndex > 0) {
-        tryToMergeAdjacentRanges(rangeIndex - 1);
-    }
+    // NOTE: The trailing range must be merged before the leading range, otherwise merging
+    //       the leading range will cause the rangeIndex to be out of bounds in some cases.
+    //       (I wrote a unit test for this, but since there is no test suite here the test
+    //       is in my project not mailcore).
     if (rangeIndex < mCount - 1) {
         tryToMergeAdjacentRanges(rangeIndex);
+    }
+    if (rangeIndex > 0) {
+        tryToMergeAdjacentRanges(rangeIndex - 1);
     }
 }
 
@@ -241,9 +249,13 @@ void IndexSet::mergeRanges(unsigned int rangeIndex)
 {
     int right = rangeIndex;
     
+    uint64_t leftBound = RangeLeftBound(mRanges[rangeIndex]);
+    uint64_t rightBound = RangeRightBound(mRanges[rangeIndex]);
     for(int i = rangeIndex ; i < mCount ; i ++) {
         if (RangeHasIntersection(mRanges[rangeIndex], mRanges[i])) {
             right = i;
+            leftBound = MIN(leftBound, RangeLeftBound(mRanges[i]));
+            rightBound = MAX(rightBound, RangeRightBound(mRanges[i]));
         }
         else {
             break;
@@ -253,9 +265,7 @@ void IndexSet::mergeRanges(unsigned int rangeIndex)
     if (right == rangeIndex)
         return;
     
-    IndexSet * indexSet = RangeUnion(mRanges[rangeIndex], mRanges[right]);
-    MCAssert(indexSet->rangesCount() > 0);
-    Range range = indexSet->allRanges()[0];
+    Range range = RangeMake(leftBound, rightBound - leftBound);
     removeRangeIndex(rangeIndex + 1, right - rangeIndex);
     mRanges[rangeIndex] = range;
 }
@@ -367,12 +377,14 @@ Object * IndexSet::copy()
 
 void IndexSet::intersectsRange(Range range)
 {
-    uint64_t right = RangeRightBound(range);
-    if (right == UINT64_MAX) {
-        removeRange(RangeMake(0, range.location - 1));
+    // Remove to the left of range if there are values there
+    uint64_t left = RangeLeftBound(range);
+    if (left > 0) {
+        removeRange(RangeMake(0, left - 1));
     }
-    else {
-        removeRange(RangeMake(0, range.location - 1));
+    // Remove to the right of range if there are values there
+    uint64_t right = RangeRightBound(range);
+    if (right != UINT64_MAX) {
         removeRange(RangeMake(right + 1, UINT64_MAX));
     }
 }
@@ -405,8 +417,9 @@ bool IndexSet::isEqual(Object * otherObject)
         return false;
     }
     for(unsigned int i = 0 ; i < mCount ; i ++) {
-        if ((mRanges[i].location != otherIndexSet->mRanges[i].location) ||
-            (mRanges[i].length != otherIndexSet->mRanges[i].length)) {
+        // Calculate the range bounds using accessor functions to catch overflow and underflow cases
+        if ((RangeLeftBound(mRanges[i]) != RangeLeftBound(otherIndexSet->mRanges[i])) ||
+            (RangeRightBound(mRanges[i]) != RangeRightBound(otherIndexSet->mRanges[i]))) {
             return false;
         }
     }

@@ -185,6 +185,7 @@ namespace mailcore {
         
         virtual bool isIdleEnabled();
         virtual bool isXListEnabled();
+        virtual bool isMoveEnabled();
         virtual bool isCondstoreEnabled();
         virtual bool isQResyncEnabled();
         virtual bool isIdentityEnabled();
@@ -192,7 +193,8 @@ namespace mailcore {
         virtual bool isNamespaceEnabled();
         virtual bool isCompressionEnabled();
         virtual bool allowsNewPermanentFlags();
-      
+        
+        virtual bool isGmail();
         virtual String * gmailUserDisplayName() DEPRECATED_ATTRIBUTE;
         
         virtual void setConnectionLogger(ConnectionLogger * logger);
@@ -261,6 +263,7 @@ namespace mailcore {
         bool mNamespaceEnabled;
         bool mCompressionEnabled;
         bool mIsGmail;
+        bool mIsMoveEnabled;
         bool mAllowsNewPermanentFlags;
         String * mWelcomeString;
         bool mNeedsMboxMailWorkaround;

@@ -74,7 +74,10 @@ IMAPAsyncSession::IMAPAsyncSession()
     mOperationQueueCallback = NULL;
 #if __APPLE__
     mDispatchQueue = dispatch_get_main_queue();
+    configurationDispatchQueue = dispatch_queue_create("com.mailcore.IMAPAsyncSession.configuration", NULL);
 #endif
+    mIsGmail = false;
+    mIsMoveEnabled = false;
     mGmailUserDisplayName = NULL;
     mQueueRunning = false;
     mIdleEnabled = false;
@@ -86,6 +89,7 @@ IMAPAsyncSession::~IMAPAsyncSession()
     if (mDispatchQueue != NULL) {
         dispatch_release(mDispatchQueue);
     }
+    dispatch_release(configurationDispatchQueue);
 #endif
     MC_SAFE_RELEASE(mGmailUserDisplayName);
     MC_SAFE_RELEASE(mServerIdentity);
@@ -241,6 +245,26 @@ IMAPIdentity * IMAPAsyncSession::clientIdentity()
 void IMAPAsyncSession::setClientIdentity(IMAPIdentity * clientIdentity)
 {
     MC_SAFE_REPLACE_COPY(IMAPIdentity, mClientIdentity, clientIdentity);
+}
+
+bool IMAPAsyncSession::isGmail()
+{
+    return mIsGmail;
+}
+
+bool IMAPAsyncSession::isMoveEnabled()
+{
+    return mIsMoveEnabled;
+}
+
+bool IMAPAsyncSession::isCondstoreEnabled()
+{
+    return mIsCondstoreEnabled;
+}
+
+bool IMAPAsyncSession::isQResyncEnabled()
+{
+    return mIsQResyncEnabled;
 }
 
 String * IMAPAsyncSession::gmailUserDisplayName()
@@ -870,11 +894,21 @@ IMAPMessageRenderingOperation * IMAPAsyncSession::plainTextBodyRenderingOperatio
 
 void IMAPAsyncSession::automaticConfigurationDone(IMAPSession * session)
 {
+#if __APPLE__
+    dispatch_sync((dispatch_queue_t) configurationDispatchQueue, ^{
+#endif
     MC_SAFE_REPLACE_COPY(IMAPIdentity, mServerIdentity, session->serverIdentity());
+    mIsGmail = session->isGmail();
+    mIsMoveEnabled = session->isMoveEnabled();
+    mIsCondstoreEnabled = session->isCondstoreEnabled();
+    mIsQResyncEnabled = session->isQResyncEnabled();
     MC_SAFE_REPLACE_COPY(String, mGmailUserDisplayName, session->gmailUserDisplayName());
     mIdleEnabled = session->isIdleEnabled();
     setDefaultNamespace(session->defaultNamespace());
     mAutomaticConfigurationDone = true;
+#if __APPLE__
+    });
+#endif
 }
 
 void IMAPAsyncSession::setOperationQueueCallback(OperationQueueCallback * callback)

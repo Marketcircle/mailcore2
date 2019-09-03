@@ -93,6 +93,18 @@
 /** The identity of the IMAP server. */
 @property (nonatomic, strong, readonly) MCOIMAPIdentity * serverIdentity;
 
+/** If the server is Gmail */
+@property (nonatomic, assign, readonly) BOOL isGmail;
+
+/** If the server supports MOVE */
+@property (nonatomic, assign, readonly) BOOL isMoveEnabled;
+
+/** Does the server support CONDSTORE */
+@property (nonatomic, assign, readonly) BOOL isCondstoreEnabled;
+
+/** Does the server support QRESYNC */
+@property (nonatomic, assign, readonly) BOOL isQResyncEnabled;
+
 /**
  Display name of the Gmail user. It will be nil if it's not a Gmail server.
 

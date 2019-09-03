@@ -382,6 +382,7 @@ void IMAPSession::init()
     mNamespaceEnabled = false;
     mCompressionEnabled = false;
     mIsGmail = false;
+    mIsMoveEnabled = false;
     mAllowsNewPermanentFlags = false;
     mWelcomeString = NULL;
     mNeedsMboxMailWorkaround = false;
@@ -4254,6 +4255,9 @@ void IMAPSession::applyCapabilities(IndexSet * capabilities)
         mIdleEnabled = true;
         UNLOCK();
     }
+    if (capabilities->containsIndex(IMAPCapabilityMove)) {
+        mIsMoveEnabled = true;
+    }
     if (capabilities->containsIndex(IMAPCapabilityCondstore)) {
         mCondstoreEnabled = true;
     }
@@ -4324,6 +4328,16 @@ bool IMAPSession::isCompressionEnabled()
 
 bool IMAPSession::allowsNewPermanentFlags() {
     return mAllowsNewPermanentFlags;
+}
+
+bool IMAPSession::isGmail()
+{
+    return mIsGmail;
+}
+
+bool IMAPSession::isMoveEnabled()
+{
+    return mIsMoveEnabled;
 }
 
 bool IMAPSession::isDisconnected()
