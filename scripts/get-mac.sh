@@ -6,7 +6,7 @@ popd > /dev/null
 
 . "$scriptpath/include.sh/build-dep.sh"
 
-acquire_lock "$scriptpath/$0.lock"
+acquire_lock "$0.lock"
 
 deps="ctemplate-osx libetpan-osx"
 for dep in $deps ; do
