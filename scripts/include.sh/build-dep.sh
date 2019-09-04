@@ -7,6 +7,8 @@
 # they release it. This function should only be called once per script.
 acquire_lock()
 {
+  # Store lockfile in a global variable, otherwise it won't be defined when the
+  # cleanup hook is called 
   lockfile="$1"
   while :
   do
