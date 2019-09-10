@@ -1,5 +1,31 @@
 #!/bin/sh
 
+# Aquires an exclusive lock for the execation of the script. The only (reqruired)
+# parameter is the path to the lockfile to use. Only one script can run using the
+# same lockfile path. The lock will be released automatically when the script 
+# terminates. If another process has the lock then the caller will block until
+# they release it. This function should only be called once per script.
+acquire_lock()
+{
+  # Store lockfile in a global variable, otherwise it won't be defined when the
+  # cleanup hook is called 
+  lockfile="$1"
+  while :
+  do
+    if mkdir "$lockfile" 2>/dev/null; then
+      echo "Lock $lockfile acquired"
+
+      # Remove lockdir when the script finishes, or when it receives a signal
+      trap 'rm -rf "$lockfile"' EXIT
+      break
+    else
+      # Yes, this is as gross as it looks
+      echo "Another process has the lock $lockfile, waiting…"
+      sleep 1
+    fi
+  done
+}
+
 build_git_ios()
 {
   if test "x$name" = x ; then
