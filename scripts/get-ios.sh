@@ -6,6 +6,8 @@ popd > /dev/null
 
 . "$scriptpath/include.sh/build-dep.sh"
 
+acquire_lock "$0.lock"
+
 deps="ctemplate-ios libetpan-ios tidy-html5-ios"
 for dep in $deps ; do
   name="$dep"
