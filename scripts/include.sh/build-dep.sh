@@ -306,11 +306,22 @@ get_prebuilt_dep()
   if test ! -d "$scriptpath/../Externals/$name" ; then
     echo "$name is not in Externals. Checking built products dir"
 
-    if test -f "${BUILT_PRODUCTS_DIR}/${name}.a" ; then
-      echo "Found product in built products dir, using that version. The version number of that"
-      echo "version is unknown, it is your responsability to ensure that it is up to date and is"
-      echo "configured properly with any required headers copied to $BUILT_PRODUCTS_DIR"
+    # Maps dependency names to their products in the build folder
+    # (This should be an argument, but, whatever)
+    product_libetpan_ios="libetpan-ios.a"
+    product_libetpan_osx="libetpan.a"
 
+    i="product_${name/-/_}"
+    product="${!i}"
+    
+    if test -z "$product" ; then
+      echo "No filename for a product in ${BUILT_PRODUCTS_DIR} defined for dependency ${name}. Triggering download"
+      installed_version=
+    elif test -f "${BUILT_PRODUCTS_DIR}/$product" ; then
+      echo "Found product $product in built products dir. Using that version. The version number"
+      echo "is unknown, it is your responsability to ensure that it is up to date and is"
+      echo "configured properly with any required headers copied to $BUILT_PRODUCTS_DIR"
+      
       # Mark the version as up to date, even though the true version number is not known
       installed_version="`defaults read "$versions_path" "$name" 2>/dev/null`"
     else
