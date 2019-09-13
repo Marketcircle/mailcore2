@@ -1995,6 +1995,55 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9208D616232C1D08002EF3DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9208D60E232C1D08002EF3DA /* libetpan.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = libetpan;
+		};
+		9208D618232C1D08002EF3DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9208D60E232C1D08002EF3DA /* libetpan.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C69AB10A10546FE500F32FBD;
+			remoteInfo = "static libetpan";
+		};
+		9208D61A232C1D08002EF3DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9208D60E232C1D08002EF3DA /* libetpan.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C682E2C015B315EF00BE9DA7;
+			remoteInfo = "libetpan ios";
+		};
+		92B644A4232C41CB00A3E07B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9208D60E232C1D08002EF3DA /* libetpan.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C69AB10910546FE500F32FBD;
+			remoteInfo = "static libetpan";
+		};
+		92B644A6232C41E700A3E07B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9208D60E232C1D08002EF3DA /* libetpan.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C682E21815B315EF00BE9DA7;
+			remoteInfo = "libetpan ios";
+		};
+		92B644A8232C420300A3E07B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9208D60E232C1D08002EF3DA /* libetpan.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = libetpan;
+		};
+		92B644AA232C421300A3E07B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9208D60E232C1D08002EF3DA /* libetpan.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C682E21815B315EF00BE9DA7;
+			remoteInfo = "libetpan ios";
+		};
 		C600B61E1A244BD8000728F1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C64EA52E169E772200778456 /* Project object */;
@@ -2603,6 +2652,7 @@
 		8B0095C81A00DDC500F84BC0 /* MCSMTPLoginOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSMTPLoginOperation.h; sourceTree = "<group>"; };
 		8B0095CA1A00DDE700F84BC0 /* MCOSMTPLoginOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCOSMTPLoginOperation.h; sourceTree = "<group>"; };
 		8B0095CB1A00DDE700F84BC0 /* MCOSMTPLoginOperation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MCOSMTPLoginOperation.mm; sourceTree = "<group>"; };
+		9208D60E232C1D08002EF3DA /* libetpan.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libetpan.xcodeproj; path = "/Users/progersmc/Developer/apps/ThirdParty/../Dependencies/Carthage/Checkouts/libetpan/build-mac/libetpan.xcodeproj"; sourceTree = "<absolute>"; };
 		943F1A9817D964F600F0C798 /* MCIMAPConnectOperation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MCIMAPConnectOperation.cpp; sourceTree = "<group>"; };
 		943F1A9917D964F600F0C798 /* MCIMAPConnectOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCIMAPConnectOperation.h; sourceTree = "<group>"; };
 		9E774D871767C54E0065EB9B /* MCIMAPFolderStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCIMAPFolderStatus.h; sourceTree = "<group>"; };
@@ -3327,6 +3377,16 @@
 			path = nntp;
 			sourceTree = "<group>";
 		};
+		9208D60F232C1D08002EF3DA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9208D617232C1D08002EF3DA /* libetpan.framework */,
+				9208D619232C1D08002EF3DA /* libetpan.a */,
+				9208D61B232C1D08002EF3DA /* libetpan-ios.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		BDCD7C691A70771B0001DCC3 /* icu-ucsdet */ = {
 			isa = PBXGroup;
 			children = (
@@ -3884,6 +3944,7 @@
 		C64EA78E169F259200778456 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9208D60E232C1D08002EF3DA /* libetpan.xcodeproj */,
 				C600B6221A244CC3000728F1 /* CFNetwork.framework */,
 				C6B5AE1119F63496001352A6 /* Foundation.framework */,
 				C6B5AE0F19F6347C001352A6 /* Security.framework */,
@@ -4737,6 +4798,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				92B644AB232C421300A3E07B /* PBXTargetDependency */,
 			);
 			name = "mailcore ios";
 			productName = "mailcore framework";
@@ -4774,6 +4836,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				92B644A5232C41CB00A3E07B /* PBXTargetDependency */,
 			);
 			name = "static mailcore2 osx";
 			productName = mailcore;
@@ -4847,6 +4910,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				92B644A7232C41E700A3E07B /* PBXTargetDependency */,
 			);
 			name = "static mailcore2 ios";
 			productName = mailcore;
@@ -4866,6 +4930,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				92B644A9232C420300A3E07B /* PBXTargetDependency */,
 			);
 			name = "mailcore osx";
 			productName = "mailcore framework";
@@ -4900,6 +4965,12 @@
 			mainGroup = C64EA52C169E772200778456;
 			productRefGroup = C64EA538169E772200778456 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9208D60F232C1D08002EF3DA /* Products */;
+					ProjectRef = 9208D60E232C1D08002EF3DA /* libetpan.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				C64EA536169E772200778456 /* static mailcore2 osx */,
@@ -4913,6 +4984,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9208D617232C1D08002EF3DA /* libetpan.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = libetpan.framework;
+			remoteRef = 9208D616232C1D08002EF3DA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9208D619232C1D08002EF3DA /* libetpan.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libetpan.a;
+			remoteRef = 9208D618232C1D08002EF3DA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9208D61B232C1D08002EF3DA /* libetpan-ios.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libetpan-ios.a";
+			remoteRef = 9208D61A232C1D08002EF3DA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		27780C3519CF9CD100C77E44 /* Resources */ = {
@@ -4976,7 +5071,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$SRCROOT/../scripts/get-ios.sh\"";
+			shellScript = "\"$SRCROOT/../scripts/get-ios.sh\"\n";
 		};
 		4C4E4FE51EFC3B3A00C6B5DF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -6076,6 +6171,26 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		92B644A5232C41CB00A3E07B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "static libetpan";
+			targetProxy = 92B644A4232C41CB00A3E07B /* PBXContainerItemProxy */;
+		};
+		92B644A7232C41E700A3E07B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libetpan ios";
+			targetProxy = 92B644A6232C41E700A3E07B /* PBXContainerItemProxy */;
+		};
+		92B644A9232C420300A3E07B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libetpan;
+			targetProxy = 92B644A8232C420300A3E07B /* PBXContainerItemProxy */;
+		};
+		92B644AB232C421300A3E07B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "libetpan ios";
+			targetProxy = 92B644AA232C421300A3E07B /* PBXContainerItemProxy */;
+		};
 		C600B61F1A244BD8000728F1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C64EA536169E772200778456 /* static mailcore2 osx */;
