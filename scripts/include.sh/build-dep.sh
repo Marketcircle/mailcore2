@@ -155,14 +155,15 @@ build_git_ios()
 
 build_git_osx()
 {
-  sdk="`xcodebuild -showsdks 2>/dev/null | grep macosx | sed 's/.*macosx\(.*\)/\1/'`"
-  archs="x86_64"
+xc
+  sdk="`xcodebuild -showsdks 2>/dev/null | grep '-sdk macosx' | sed 's/.*macosx\(.*\)/\1/'`"
+  archs="x86_64 arm64"
   sdkminversion="10.7"
-  
+
   if test "x$name" = x ; then
     return
   fi
-  
+
   versions_path="$scriptpath/deps-versions.plist"
   version="`defaults read "$versions_path" "$name" 2>/dev/null`"
   version="$(($version+1))"
@@ -224,7 +225,7 @@ build_git_osx()
     exit 1
   fi
   echo finished
-  
+
   if echo $library|grep '\.framework$'>/dev/null ; then
     cd "$tmpdir/bin/Release"
     defaults write "$tmpdir/bin/Release/$library/Resources/Info.plist" "git-rev" "$rev"
@@ -289,19 +290,19 @@ build_git_osx()
 
 get_prebuilt_dep()
 {
-  url="https://d.etpan.org/mailcore2-deps"
+  url="https://mailcore-deps.ams3.digitaloceanspaces.com"
 
   if test "x$name" = x ; then
     return
   fi
-  
+
   versions_path="$scriptpath/deps-versions.plist"
   installed_versions_path="$scriptpath/installed-deps-versions.plist"
   if test ! -f "$versions_path" ; then
     build_for_external=1 "$scriptpath/build-$name.sh"
     return;
   fi
-  
+
   installed_version="`defaults read "$installed_versions_path" "$name" 2>/dev/null`"
   if test ! -d "$scriptpath/../Externals/$name" ; then
     echo "$name is not in Externals. Checking built products dir"
@@ -313,7 +314,7 @@ get_prebuilt_dep()
 
     i="product_${name/-/_}"
     product="${!i}"
-    
+
     if test -z "$product" ; then
       echo "No filename for a product in ${BUILT_PRODUCTS_DIR} defined for dependency ${name}. Triggering download"
       installed_version=
@@ -321,11 +322,11 @@ get_prebuilt_dep()
       echo "Found product $product in built products dir. Using that version. The version number"
       echo "is unknown, it is your responsability to ensure that it is up to date and is"
       echo "configured properly with any required headers copied to $BUILT_PRODUCTS_DIR"
-      
+
       # Mark the version as up to date, even though the true version number is not known
       installed_version="`defaults read "$versions_path" "$name" 2>/dev/null`"
     else
-      # There is no version in BUILT_PRODUCTS_DIR so clear installed_version in order to 
+      # There is no version in BUILT_PRODUCTS_DIR so clear installed_version in order to
       # download a new copy
       installed_version=
     fi
@@ -342,7 +343,7 @@ get_prebuilt_dep()
 
   BUILD_TIMESTAMP=`date +'%Y%m%d%H%M%S'`
   tempbuilddir="$scriptpath/../Externals/workdir/$BUILD_TIMESTAMP"
-  
+
   mkdir -p "$tempbuilddir"
   cd "$tempbuilddir"
   echo "Downloading $name-$version"
@@ -357,7 +358,7 @@ get_prebuilt_dep()
   cd ..
   rm -f "$scriptpath/../Externals/git-rev"
   rm -rf "$tempbuilddir"
-  
+
   if test -d "$scriptpath/../Externals/$name" ; then
     defaults write "$installed_versions_path" "$name" "$version"
     plutil -convert xml1 "$installed_versions_path"
