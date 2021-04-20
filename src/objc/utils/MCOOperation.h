@@ -37,10 +37,13 @@
 - (void) cancel;
 
 #pragma mark - Unavailable initializers
+
+// MC: We subclass MCOOperation in our test suite, so we need these initializers to be available:
+
 /** Do not invoke this directly. */
-- (instancetype) init NS_UNAVAILABLE;
+//- (instancetype) init NS_UNAVAILABLE;
 /** Do not invoke this directly. */
-+ (instancetype) new NS_UNAVAILABLE;
+//+ (instancetype) new NS_UNAVAILABLE;
 
 @end
 
