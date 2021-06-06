@@ -23,6 +23,8 @@ DerivedData
 *.hmap
 *.xcuserstate
 *.xccheckout
+.swiftpm/
+.build/
 
 #CocoaPods
 Pods
@@ -49,3 +51,4 @@ build-windows/mailcore2/test/x64/Release
 build-windows/mailcore2/test/Debug
 build-windows/mailcore2/test/x64/Debug
 cocoapods-build
+cmake-build-debug
