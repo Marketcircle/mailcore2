@@ -6,7 +6,7 @@ build_git_ios()
     return
   fi
 
-  simarchs="i386 x86_64"
+  simarchs="i386 x86_64 arm64"
   sdkminversion="7.0"
   sdkversion="`xcodebuild -showsdks 2>/dev/null | grep iphoneos | sed 's/.*iphoneos\(.*\)/\1/'`"
   devicearchs="armv7 armv7s arm64"
@@ -104,9 +104,10 @@ build_git_ios()
     else
       mv Release-iphoneos/include "$name-$version/$name"
     fi
-    lipo -create "Release-iphoneos/$library" \
-      "Release-iphonesimulator/$library" \
-        -output "$name-$version/$name/lib/$library"
+    xcodebuild -create-xcframework \
+      -library "Release-iphoneos/$library" \
+      -library "Release-iphonesimulator/$library" \
+      -output "$name-$version/$name/lib/$xcframework"
     for dep in $embedded_deps ; do
       if test -d "$srcdir/$name/build-mac/$dep" ; then
         mv "$srcdir/$name/build-mac/$dep" "$name-$version"
