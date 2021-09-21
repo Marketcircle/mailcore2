@@ -12,6 +12,7 @@ name="tidy-html5-ios"
 xcode_target="tidy"
 xcode_project="Tidy.xcodeproj"
 library="libtidy.a"
+xcframework="libtidy.xcframework"
 embedded_deps=""
 
 build_git_ios

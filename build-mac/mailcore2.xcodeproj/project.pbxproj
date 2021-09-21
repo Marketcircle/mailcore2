@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D67FE8A26B3B66600C4D66B /* libctemplate-ios.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D67FE8926B3B65400C4D66B /* libctemplate-ios.xcframework */; };
+		0D67FE9726B43E0300C4D66B /* libtidy.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D67FE9426B43E0300C4D66B /* libtidy.xcframework */; };
+		0D67FEBA26B495E200C4D66B /* sasl.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D67FEB426B495E200C4D66B /* sasl.xcframework */; };
 		1820E7D51BD403ED00835D1E /* MCIMAPCustomCommandOperation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1820E7D31BD403ED00835D1E /* MCIMAPCustomCommandOperation.cpp */; };
 		1820E7D61BD403ED00835D1E /* MCIMAPCustomCommandOperation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1820E7D31BD403ED00835D1E /* MCIMAPCustomCommandOperation.cpp */; };
 		184535701BE23FBD000B0D87 /* MCOIMAPCustomCommandOperation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1845356F1BE23FBD000B0D87 /* MCOIMAPCustomCommandOperation.mm */; };
@@ -1995,53 +1998,25 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		925EB4112330279600DC46DB /* PBXContainerItemProxy */ = {
+		0D67FEA526B46B1300C4D66B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9208D60E232C1D08002EF3DA /* libetpan.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
 			remoteInfo = libetpan;
 		};
-		925EB4132330279600DC46DB /* PBXContainerItemProxy */ = {
+		0D67FEA726B46B1300C4D66B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9208D60E232C1D08002EF3DA /* libetpan.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C69AB10A10546FE500F32FBD;
 			remoteInfo = "static libetpan";
 		};
-		925EB4152330279600DC46DB /* PBXContainerItemProxy */ = {
+		0D67FEA926B46B1300C4D66B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9208D60E232C1D08002EF3DA /* libetpan.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C682E2C015B315EF00BE9DA7;
-			remoteInfo = "libetpan ios";
-		};
-		925EB418233027E900DC46DB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9208D60E232C1D08002EF3DA /* libetpan.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = C69AB10910546FE500F32FBD;
-			remoteInfo = "static libetpan";
-		};
-		925EB41A233027F500DC46DB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9208D60E232C1D08002EF3DA /* libetpan.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = C682E21815B315EF00BE9DA7;
-			remoteInfo = "libetpan ios";
-		};
-		925EB41C2330280100DC46DB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9208D60E232C1D08002EF3DA /* libetpan.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
-			remoteInfo = libetpan;
-		};
-		925EB41E2330280B00DC46DB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9208D60E232C1D08002EF3DA /* libetpan.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = C682E21815B315EF00BE9DA7;
 			remoteInfo = "libetpan ios";
 		};
 		C600B61E1A244BD8000728F1 /* PBXContainerItemProxy */ = {
@@ -2550,6 +2525,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0D67FE8926B3B65400C4D66B /* libctemplate-ios.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "libctemplate-ios.xcframework"; path = "../deps/ctemplate-ios/lib/libctemplate-ios.xcframework"; sourceTree = "<group>"; };
+		0D67FE9426B43E0300C4D66B /* libtidy.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libtidy.xcframework; path = "../deps/tidy-html5-ios/lib/libtidy.xcframework"; sourceTree = "<group>"; };
+		0D67FEB426B495E200C4D66B /* sasl.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = sasl.xcframework; path = "sasl.xcframework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1820E7D31BD403ED00835D1E /* MCIMAPCustomCommandOperation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MCIMAPCustomCommandOperation.cpp; sourceTree = "<group>"; };
 		1820E7D41BD403ED00835D1E /* MCIMAPCustomCommandOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCIMAPCustomCommandOperation.h; sourceTree = "<group>"; };
 		1845356E1BE23FBD000B0D87 /* MCOIMAPCustomCommandOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCOIMAPCustomCommandOperation.h; sourceTree = "<group>"; };
@@ -2652,7 +2630,7 @@
 		8B0095C81A00DDC500F84BC0 /* MCSMTPLoginOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSMTPLoginOperation.h; sourceTree = "<group>"; };
 		8B0095CA1A00DDE700F84BC0 /* MCOSMTPLoginOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCOSMTPLoginOperation.h; sourceTree = "<group>"; };
 		8B0095CB1A00DDE700F84BC0 /* MCOSMTPLoginOperation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MCOSMTPLoginOperation.mm; sourceTree = "<group>"; };
-		9208D60E232C1D08002EF3DA /* libetpan.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libetpan.xcodeproj; path = "../../libetpan/build-mac/libetpan.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		9208D60E232C1D08002EF3DA /* libetpan.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libetpan.xcodeproj; path = "../libetpan/build-mac/libetpan.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		943F1A9817D964F600F0C798 /* MCIMAPConnectOperation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MCIMAPConnectOperation.cpp; sourceTree = "<group>"; };
 		943F1A9917D964F600F0C798 /* MCIMAPConnectOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCIMAPConnectOperation.h; sourceTree = "<group>"; };
 		9E774D871767C54E0065EB9B /* MCIMAPFolderStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCIMAPFolderStatus.h; sourceTree = "<group>"; };
@@ -3194,7 +3172,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D67FE8A26B3B66600C4D66B /* libctemplate-ios.xcframework in Frameworks */,
 				27780C3D19CF9D9800C77E44 /* CFNetwork.framework in Frameworks */,
+				0D67FE9726B43E0300C4D66B /* libtidy.xcframework in Frameworks */,
+				0D67FEBA26B495E200C4D66B /* sasl.xcframework in Frameworks */,
 				27780C3219CF9CD100C77E44 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3268,6 +3249,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D67FE9E26B46B1300C4D66B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0D67FEA626B46B1300C4D66B /* libetpan.framework */,
+				0D67FEA826B46B1300C4D66B /* libetpan.a */,
+				0D67FEAA26B46B1300C4D66B /* libetpan-ios.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		8491899A18C93F6E002063A3 /* nntp */ = {
 			isa = PBXGroup;
 			children = (
@@ -3375,16 +3366,6 @@
 				F38221A21C7AAD8100E00721 /* MCONNTPPostOperation.mm */,
 			);
 			path = nntp;
-			sourceTree = "<group>";
-		};
-		925EB40A2330279600DC46DB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				925EB4122330279600DC46DB /* libetpan.framework */,
-				925EB4142330279600DC46DB /* libetpan.a */,
-				925EB4162330279600DC46DB /* libetpan-ios.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		BDCD7C691A70771B0001DCC3 /* icu-ucsdet */ = {
@@ -3944,6 +3925,9 @@
 		C64EA78E169F259200778456 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0D67FEB426B495E200C4D66B /* sasl.xcframework */,
+				0D67FE9426B43E0300C4D66B /* libtidy.xcframework */,
+				0D67FE8926B3B65400C4D66B /* libctemplate-ios.xcframework */,
 				9208D60E232C1D08002EF3DA /* libetpan.xcodeproj */,
 				C600B6221A244CC3000728F1 /* CFNetwork.framework */,
 				C6B5AE1119F63496001352A6 /* Foundation.framework */,
@@ -4798,7 +4782,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				925EB41F2330280B00DC46DB /* PBXTargetDependency */,
 			);
 			name = "mailcore ios";
 			productName = "mailcore framework";
@@ -4836,7 +4819,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				925EB419233027E900DC46DB /* PBXTargetDependency */,
 			);
 			name = "static mailcore2 osx";
 			productName = mailcore;
@@ -4910,7 +4892,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				925EB41B233027F500DC46DB /* PBXTargetDependency */,
 			);
 			name = "static mailcore2 ios";
 			productName = mailcore;
@@ -4930,7 +4911,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				925EB41D2330280100DC46DB /* PBXTargetDependency */,
 			);
 			name = "mailcore osx";
 			productName = "mailcore framework";
@@ -4967,7 +4947,7 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 925EB40A2330279600DC46DB /* Products */;
+					ProductGroup = 0D67FE9E26B46B1300C4D66B /* Products */;
 					ProjectRef = 9208D60E232C1D08002EF3DA /* libetpan.xcodeproj */;
 				},
 			);
@@ -4986,25 +4966,25 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		925EB4122330279600DC46DB /* libetpan.framework */ = {
+		0D67FEA626B46B1300C4D66B /* libetpan.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = libetpan.framework;
-			remoteRef = 925EB4112330279600DC46DB /* PBXContainerItemProxy */;
+			remoteRef = 0D67FEA526B46B1300C4D66B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		925EB4142330279600DC46DB /* libetpan.a */ = {
+		0D67FEA826B46B1300C4D66B /* libetpan.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libetpan.a;
-			remoteRef = 925EB4132330279600DC46DB /* PBXContainerItemProxy */;
+			remoteRef = 0D67FEA726B46B1300C4D66B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		925EB4162330279600DC46DB /* libetpan-ios.a */ = {
+		0D67FEAA26B46B1300C4D66B /* libetpan-ios.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libetpan-ios.a";
-			remoteRef = 925EB4152330279600DC46DB /* PBXContainerItemProxy */;
+			remoteRef = 0D67FEA926B46B1300C4D66B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -6171,26 +6151,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		925EB419233027E900DC46DB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "static libetpan";
-			targetProxy = 925EB418233027E900DC46DB /* PBXContainerItemProxy */;
-		};
-		925EB41B233027F500DC46DB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "libetpan ios";
-			targetProxy = 925EB41A233027F500DC46DB /* PBXContainerItemProxy */;
-		};
-		925EB41D2330280100DC46DB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = libetpan;
-			targetProxy = 925EB41C2330280100DC46DB /* PBXContainerItemProxy */;
-		};
-		925EB41F2330280B00DC46DB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "libetpan ios";
-			targetProxy = 925EB41E2330280B00DC46DB /* PBXContainerItemProxy */;
-		};
 		C600B61F1A244BD8000728F1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C64EA536169E772200778456 /* static mailcore2 osx */;
@@ -6233,7 +6193,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULEMAP_FILE = MailCore.modulemap;
 				OTHER_LDFLAGS = (
-					"-lctemplate-ios",
 					"-letpan-ios",
 					"-lxml2",
 					"-lsasl2",
@@ -6270,7 +6229,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULEMAP_FILE = MailCore.modulemap;
 				OTHER_LDFLAGS = (
-					"-lctemplate-ios",
 					"-letpan-ios",
 					"-lxml2",
 					"-lsasl2",
@@ -6405,16 +6363,13 @@
 				"HEADER_SEARCH_PATHS[sdk=iphoneos*]" = "$(IOS_HEADERS_SEARCH_PATHS)";
 				"HEADER_SEARCH_PATHS[sdk=iphonesimulator*]" = "$(IOS_HEADERS_SEARCH_PATHS)";
 				"HEADER_SEARCH_PATHS[sdk=macosx*]" = "$(OSX_HEADERS_SEARCH_PATHS)";
-				IOS_HEADERS_SEARCH_PATHS = "\"$(SRCROOT)/../src/core/basetypes/icu-ucsdet/include\" \"$(SRCROOT)/../Externals/libetpan-ios/include\" \"$(SRCROOT)/../Externals/ctemplate-ios/include\" \"$(SRCROOT)/../Externals/tidy-html5-ios/include/tidy\" /usr/include/libxml2";
-				IOS_LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../Externals/libetpan-ios/lib\" \"$(SRCROOT)/../Externals/ctemplate-ios/lib\" \"$(SRCROOT)/../Externals/libsasl-ios/lib\" \"$(SRCROOT)/../Externals/tidy-html5-ios/lib\"";
+				IOS_HEADERS_SEARCH_PATHS = "\"$(SRCROOT)/../src/core/basetypes/icu-ucsdet/include\" \"$(SRCROOT)/../deps/libetpan-ios/include\" \"$(SRCROOT)/../deps/ctemplate-ios/include\" \"$(SRCROOT)/../deps/tidy-html5-ios/include/tidy\" /usr/include/libxml2";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../Externals/libetpan/lib\"",
 					"\"$(SRCROOT)/../Externals/icu4c/lib\"",
 					"\"$(SRCROOT)/../Externals/ctemplate/lib\"",
 				);
-				"LIBRARY_SEARCH_PATHS[sdk=iphoneos*]" = "$(IOS_LIBRARY_SEARCH_PATHS)";
-				"LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*]" = "$(IOS_LIBRARY_SEARCH_PATHS)";
 				"LIBRARY_SEARCH_PATHS[sdk=macosx*]" = "$(OSX_LIBRARY_SEARCH_PATHS)";
 				ONLY_ACTIVE_ARCH = YES;
 				OSX_HEADERS_SEARCH_PATHS = "\"$(SRCROOT)/../src/core/basetypes/icu-ucsdet/include\" \"$(SRCROOT)/../Externals/libetpan-osx/include\" \"$(SRCROOT)/../Externals/ctemplate-osx/include\" /usr/include/tidy /usr/include/libxml2";
@@ -6449,16 +6404,13 @@
 				"HEADER_SEARCH_PATHS[sdk=iphoneos*]" = "$(IOS_HEADERS_SEARCH_PATHS)";
 				"HEADER_SEARCH_PATHS[sdk=iphonesimulator*]" = "$(IOS_HEADERS_SEARCH_PATHS)";
 				"HEADER_SEARCH_PATHS[sdk=macosx*]" = "$(OSX_HEADERS_SEARCH_PATHS)";
-				IOS_HEADERS_SEARCH_PATHS = "\"$(SRCROOT)/../src/core/basetypes/icu-ucsdet/include\" \"$(SRCROOT)/../Externals/libetpan-ios/include\" \"$(SRCROOT)/../Externals/ctemplate-ios/include\" \"$(SRCROOT)/../Externals/tidy-html5-ios/include/tidy\" /usr/include/libxml2";
-				IOS_LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../Externals/libetpan-ios/lib\" \"$(SRCROOT)/../Externals/ctemplate-ios/lib\" \"$(SRCROOT)/../Externals/libsasl-ios/lib\" \"$(SRCROOT)/../Externals/tidy-html5-ios/lib\"";
+				IOS_HEADERS_SEARCH_PATHS = "\"$(SRCROOT)/../src/core/basetypes/icu-ucsdet/include\" \"$(SRCROOT)/../deps/libetpan-ios/include\" \"$(SRCROOT)/../deps/ctemplate-ios/include\" \"$(SRCROOT)/../deps/tidy-html5-ios/include/tidy\" /usr/include/libxml2";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../Externals/libetpan/lib\"",
 					"\"$(SRCROOT)/../Externals/icu4c/lib\"",
 					"\"$(SRCROOT)/../Externals/ctemplate/lib\"",
 				);
-				"LIBRARY_SEARCH_PATHS[sdk=iphoneos*]" = "$(IOS_LIBRARY_SEARCH_PATHS)";
-				"LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*]" = "$(IOS_LIBRARY_SEARCH_PATHS)";
 				"LIBRARY_SEARCH_PATHS[sdk=macosx*]" = "$(OSX_LIBRARY_SEARCH_PATHS)";
 				OSX_HEADERS_SEARCH_PATHS = "\"$(SRCROOT)/../src/core/basetypes/icu-ucsdet/include\" \"$(SRCROOT)/../Externals/libetpan-osx/include\" \"$(SRCROOT)/../Externals/ctemplate-osx/include\" /usr/include/tidy /usr/include/libxml2";
 				OSX_LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../Externals/libetpan-osx/lib\" \"$(SRCROOT)/../Externals/ctemplate-osx/lib\"";
@@ -6597,7 +6549,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = ../unittest/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -6629,7 +6585,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = ../unittest/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
