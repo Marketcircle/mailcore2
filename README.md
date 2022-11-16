@@ -1,3 +1,23 @@
+#Marketcircle fork additions
+
+For iOS we’re using our build.sh script to generate an xcframework, for macOS we’re still using Carthage.
+
+Example workflow:
+
+```
+git clone git@github.com:marketcircle/mailcore2.git
+cd mailcore2
+git submodule update --init
+./build.sh 
+
+xcframework successfully written out to: ${APPS_REPO_DIR}/mailcore2/DerivedData/Build/Products/MailCore.xcframework
+
+# Move DerivedData/Build/Products/MailCore.xcframework to
+# the relevant Pre-Built-Frameworks folder
+```
+
+#Original Mailcore 2 readme
+
 ## MailCore 2: Introduction ##
 
 MailCore 2 provides a simple and asynchronous Objective-C API to work with the e-mail protocols **IMAP**, **POP** and **SMTP**. The API has been redesigned from the ground up.  It features:

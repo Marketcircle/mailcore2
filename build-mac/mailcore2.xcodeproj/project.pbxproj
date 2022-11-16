@@ -2527,7 +2527,7 @@
 /* Begin PBXFileReference section */
 		0D67FE8926B3B65400C4D66B /* libctemplate-ios.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "libctemplate-ios.xcframework"; path = "../deps/ctemplate-ios/lib/libctemplate-ios.xcframework"; sourceTree = "<group>"; };
 		0D67FE9426B43E0300C4D66B /* libtidy.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = libtidy.xcframework; path = "../deps/tidy-html5-ios/lib/libtidy.xcframework"; sourceTree = "<group>"; };
-		0D67FEB426B495E200C4D66B /* sasl.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = sasl.xcframework; path = "sasl.xcframework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D67FEB426B495E200C4D66B /* sasl.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = sasl.xcframework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1820E7D31BD403ED00835D1E /* MCIMAPCustomCommandOperation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MCIMAPCustomCommandOperation.cpp; sourceTree = "<group>"; };
 		1820E7D41BD403ED00835D1E /* MCIMAPCustomCommandOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCIMAPCustomCommandOperation.h; sourceTree = "<group>"; };
 		1845356E1BE23FBD000B0D87 /* MCOIMAPCustomCommandOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCOIMAPCustomCommandOperation.h; sourceTree = "<group>"; };
@@ -6190,7 +6190,6 @@
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "framework-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULEMAP_FILE = MailCore.modulemap;
 				OTHER_LDFLAGS = (
 					"-letpan-ios",
@@ -6226,7 +6225,6 @@
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = "framework-Info.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULEMAP_FILE = MailCore.modulemap;
 				OTHER_LDFLAGS = (
 					"-letpan-ios",
@@ -6364,7 +6362,7 @@
 				"HEADER_SEARCH_PATHS[sdk=iphonesimulator*]" = "$(IOS_HEADERS_SEARCH_PATHS)";
 				"HEADER_SEARCH_PATHS[sdk=macosx*]" = "$(OSX_HEADERS_SEARCH_PATHS)";
 				IOS_HEADERS_SEARCH_PATHS = "\"$(SRCROOT)/../src/core/basetypes/icu-ucsdet/include\" \"$(SRCROOT)/../deps/libetpan-ios/include\" \"$(SRCROOT)/../deps/ctemplate-ios/include\" \"$(SRCROOT)/../deps/tidy-html5-ios/include/tidy\" /usr/include/libxml2";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../Externals/libetpan/lib\"",
 					"\"$(SRCROOT)/../Externals/icu4c/lib\"",
@@ -6405,7 +6403,7 @@
 				"HEADER_SEARCH_PATHS[sdk=iphonesimulator*]" = "$(IOS_HEADERS_SEARCH_PATHS)";
 				"HEADER_SEARCH_PATHS[sdk=macosx*]" = "$(OSX_HEADERS_SEARCH_PATHS)";
 				IOS_HEADERS_SEARCH_PATHS = "\"$(SRCROOT)/../src/core/basetypes/icu-ucsdet/include\" \"$(SRCROOT)/../deps/libetpan-ios/include\" \"$(SRCROOT)/../deps/ctemplate-ios/include\" \"$(SRCROOT)/../deps/tidy-html5-ios/include/tidy\" /usr/include/libxml2";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../Externals/libetpan/lib\"",
 					"\"$(SRCROOT)/../Externals/icu4c/lib\"",
@@ -6608,7 +6606,6 @@
 				DEAD_CODE_STRIPPING = NO;
 				ENABLE_BITCODE = YES;
 				EXECUTABLE_PREFIX = lib;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "MailCore-ios";
 				SDKROOT = iphoneos;
@@ -6622,7 +6619,6 @@
 				DEAD_CODE_STRIPPING = NO;
 				ENABLE_BITCODE = YES;
 				EXECUTABLE_PREFIX = lib;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "MailCore-ios";
 				SDKROOT = iphoneos;
