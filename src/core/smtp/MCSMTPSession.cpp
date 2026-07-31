@@ -485,21 +485,7 @@ void SMTPSession::login(ErrorCode * pError)
     }
 
     if (authType() == 0) {
-#if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
-        if (0) {
-        }
-#else
-        if (mSmtp->auth & MAILSMTP_AUTH_DIGEST_MD5) {
-            setAuthType((AuthType) (authType() | AuthTypeSASLDIGESTMD5));
-        }
-        else if (mSmtp->auth & MAILSMTP_AUTH_GSSAPI) {
-            setAuthType((AuthType) (authType() | AuthTypeSASLGSSAPI));
-        }
-        else if (mSmtp->auth & MAILSMTP_AUTH_NTLM) {
-            setAuthType((AuthType) (authType() | AuthTypeSASLNTLM));
-        }
-#endif
-        else if (mSmtp->auth & MAILSMTP_AUTH_CRAM_MD5) {
+        if (mSmtp->auth & MAILSMTP_AUTH_CRAM_MD5) {
             setAuthType((AuthType) (authType() | AuthTypeSASLCRAMMD5));
         }
         else if (mSmtp->auth & MAILSMTP_AUTH_SRP) {
